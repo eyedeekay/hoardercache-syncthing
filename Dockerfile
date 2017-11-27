@@ -7,5 +7,6 @@ RUN echo "_import" /home/st/cache/.stignore
 COPY . /home/st/
 WORKDIR /home/st/
 USER st
+RUN syncthing -generate /home/st/.config/syncthing
 RUN make syncthing-emitconf && cp config.xml .config/syncthing/config.xml
 CMD syncthing -gui-address=127.0.0.1:43842 -no-browser
