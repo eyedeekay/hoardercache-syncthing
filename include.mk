@@ -81,81 +81,81 @@ addon-syncthing-pull:
 addon-syncthing-update: addon-syncthing-pull addon-syncthing-build addon-syncthing-restart
 
 syncthing-cacheconf:
-	@echo "$(ST_CACHE_CONF)"
+	@echo "$(ST_CACHE_CONF)" | tee -a config.xml
 
 syncthing-importconf:
-	@echo "$(ST_IMPORT_CONF)"
+	@echo "$(ST_IMPORT_CONF)" | tee -a config.xml
 
 syncthing-deviceconf:
-	@echo "    <device id=\"$(syncthing-device-id)\" name=\"apthoarder-syncthing\" compression=\"metadata\" introducer=\"false\" skipIntroductionRemovals=\"false\" introducedBy=\"\">"
-	@echo "        <address>dynamic</address>"
-	@echo "        <paused>false</paused>"
-	@echo "    </device>"
+	@echo "    <device id=\"$(syncthing-device-id)\" name=\"apthoarder-syncthing\" compression=\"metadata\" introducer=\"false\" skipIntroductionRemovals=\"false\" introducedBy=\"\">" | tee -a config.xml
+	@echo "        <address>dynamic</address>" | tee -a config.xml
+	@echo "        <paused>false</paused>" | tee -a config.xml
+	@echo "    </device>" | tee -a config.xml
 
 syncthing-guiconf:
-	@echo "    <gui enabled=\"true\" tls=\"false\" debugging=\"false\">"
-	@echo "        <address>127.0.0.1:8384</address>"
-	@echo "        <apikey>$(syncthing-apikey)</apikey>"
-	@echo "        <theme>default</theme>"
-	@echo "    </gui>"
+	@echo "    <gui enabled=\"true\" tls=\"false\" debugging=\"false\">" | tee -a config.xml
+	@echo "        <address>127.0.0.1:8384</address>" | tee -a config.xml
+	@echo "        <apikey>$(syncthing-apikey)</apikey>" | tee -a config.xml
+	@echo "        <theme>default</theme>" | tee -a config.xml
+	@echo "    </gui>" | tee -a config.xml
 
 syncthing-optconf:
-	@echo "    <options>"
-	@echo "        <listenAddress>default</listenAddress>"
-	@echo "        <globalAnnounceServer>default</globalAnnounceServer>"
-	@echo "        <globalAnnounceEnabled>true</globalAnnounceEnabled>"
-	@echo "        <localAnnounceEnabled>true</localAnnounceEnabled>"
-	@echo "        <localAnnouncePort>21027</localAnnouncePort>"
-	@echo "        <localAnnounceMCAddr>[ff12::8384]:21027</localAnnounceMCAddr>"
-	@echo "        <maxSendKbps>0</maxSendKbps>"
-	@echo "        <maxRecvKbps>0</maxRecvKbps>"
-	@echo "        <reconnectionIntervalS>60</reconnectionIntervalS>"
-	@echo "        <relaysEnabled>true</relaysEnabled>"
-	@echo "        <relayReconnectIntervalM>10</relayReconnectIntervalM>"
-	@echo "        <startBrowser>true</startBrowser>"
-	@echo "        <natEnabled>true</natEnabled>"
-	@echo "        <natLeaseMinutes>60</natLeaseMinutes>"
-	@echo "        <natRenewalMinutes>30</natRenewalMinutes>"
-	@echo "        <natTimeoutSeconds>10</natTimeoutSeconds>"
-	@echo "        <urAccepted>0</urAccepted>"
-	@echo "        <urUniqueID></urUniqueID>"
-	@echo "        <urURL>https://data.syncthing.net/newdata</urURL>"
-	@echo "        <urPostInsecurely>false</urPostInsecurely>"
-	@echo "        <urInitialDelayS>1800</urInitialDelayS>"
-	@echo "        <restartOnWakeup>true</restartOnWakeup>"
-	@echo "        <autoUpgradeIntervalH>12</autoUpgradeIntervalH>"
-	@echo "        <upgradeToPreReleases>false</upgradeToPreReleases>"
-	@echo "        <keepTemporariesH>24</keepTemporariesH>"
-	@echo "        <cacheIgnoredFiles>false</cacheIgnoredFiles>"
-	@echo "        <progressUpdateIntervalS>5</progressUpdateIntervalS>"
-	@echo "        <limitBandwidthInLan>false</limitBandwidthInLan>"
-	@echo "        <minHomeDiskFree unit=\"%\">1</minHomeDiskFree>"
-	@echo "        <releasesURL>https://upgrades.syncthing.net/meta.json</releasesURL>"
-	@echo "        <overwriteRemoteDeviceNamesOnConnect>false</overwriteRemoteDeviceNamesOnConnect>"
-	@echo "        <tempIndexMinBlocks>10</tempIndexMinBlocks>"
-	@echo "        <trafficClass>0</trafficClass>"
-	@echo "        <weakHashSelectionMethod>auto</weakHashSelectionMethod>"
-	@echo "        <stunServer>default</stunServer>"
-	@echo "        <stunKeepaliveSeconds>24</stunKeepaliveSeconds>"
-	@echo "        <defaultKCPEnabled>false</defaultKCPEnabled>"
-	@echo "        <kcpNoDelay>false</kcpNoDelay>"
-	@echo "        <kcpUpdateIntervalMs>25</kcpUpdateIntervalMs>"
-	@echo "        <kcpFastResend>false</kcpFastResend>"
-	@echo "        <kcpCongestionControl>true</kcpCongestionControl>"
-	@echo "        <kcpSendWindowSize>128</kcpSendWindowSize>"
-	@echo "        <kcpReceiveWindowSize>128</kcpReceiveWindowSize>"
-	@echo "        <defaultFolderPath>~</defaultFolderPath>"
-	@echo "        <minHomeDiskFreePct>0</minHomeDiskFreePct>"
-	@echo "    </options>"
+	@echo "    <options>" | tee -a config.xml
+	@echo "        <listenAddress>default</listenAddress>" | tee -a config.xml
+	@echo "        <globalAnnounceServer>default</globalAnnounceServer>" | tee -a config.xml
+	@echo "        <globalAnnounceEnabled>true</globalAnnounceEnabled>" | tee -a config.xml
+	@echo "        <localAnnounceEnabled>true</localAnnounceEnabled>" | tee -a config.xml
+	@echo "        <localAnnouncePort>21027</localAnnouncePort>" | tee -a config.xml
+	@echo "        <localAnnounceMCAddr>[ff12::8384]:21027</localAnnounceMCAddr>" | tee -a config.xml
+	@echo "        <maxSendKbps>0</maxSendKbps>" | tee -a config.xml
+	@echo "        <maxRecvKbps>0</maxRecvKbps>" | tee -a config.xml
+	@echo "        <reconnectionIntervalS>60</reconnectionIntervalS>" | tee -a config.xml
+	@echo "        <relaysEnabled>true</relaysEnabled>" | tee -a config.xml
+	@echo "        <relayReconnectIntervalM>10</relayReconnectIntervalM>" | tee -a config.xml
+	@echo "        <startBrowser>true</startBrowser>" | tee -a config.xml
+	@echo "        <natEnabled>true</natEnabled>" | tee -a config.xml
+	@echo "        <natLeaseMinutes>60</natLeaseMinutes>" | tee -a config.xml
+	@echo "        <natRenewalMinutes>30</natRenewalMinutes>" | tee -a config.xml
+	@echo "        <natTimeoutSeconds>10</natTimeoutSeconds>" | tee -a config.xml
+	@echo "        <urAccepted>0</urAccepted>" | tee -a config.xml
+	@echo "        <urUniqueID></urUniqueID>" | tee -a config.xml
+	@echo "        <urURL>https://data.syncthing.net/newdata</urURL>" | tee -a config.xml
+	@echo "        <urPostInsecurely>false</urPostInsecurely>" | tee -a config.xml
+	@echo "        <urInitialDelayS>1800</urInitialDelayS>" | tee -a config.xml
+	@echo "        <restartOnWakeup>true</restartOnWakeup>" | tee -a config.xml
+	@echo "        <autoUpgradeIntervalH>12</autoUpgradeIntervalH>" | tee -a config.xml
+	@echo "        <upgradeToPreReleases>false</upgradeToPreReleases>" | tee -a config.xml
+	@echo "        <keepTemporariesH>24</keepTemporariesH>" | tee -a config.xml
+	@echo "        <cacheIgnoredFiles>false</cacheIgnoredFiles>" | tee -a config.xml
+	@echo "        <progressUpdateIntervalS>5</progressUpdateIntervalS>" | tee -a config.xml
+	@echo "        <limitBandwidthInLan>false</limitBandwidthInLan>" | tee -a config.xml
+	@echo "        <minHomeDiskFree unit=\"%\">1</minHomeDiskFree>" | tee -a config.xml
+	@echo "        <releasesURL>https://upgrades.syncthing.net/meta.json</releasesURL>" | tee -a config.xml
+	@echo "        <overwriteRemoteDeviceNamesOnConnect>false</overwriteRemoteDeviceNamesOnConnect>" | tee -a config.xml
+	@echo "        <tempIndexMinBlocks>10</tempIndexMinBlocks>" | tee -a config.xml
+	@echo "        <trafficClass>0</trafficClass>" | tee -a config.xml
+	@echo "        <weakHashSelectionMethod>auto</weakHashSelectionMethod>" | tee -a config.xml
+	@echo "        <stunServer>default</stunServer>" | tee -a config.xml
+	@echo "        <stunKeepaliveSeconds>24</stunKeepaliveSeconds>" | tee -a config.xml
+	@echo "        <defaultKCPEnabled>false</defaultKCPEnabled>" | tee -a config.xml
+	@echo "        <kcpNoDelay>false</kcpNoDelay>" | tee -a config.xml
+	@echo "        <kcpUpdateIntervalMs>25</kcpUpdateIntervalMs>" | tee -a config.xml
+	@echo "        <kcpFastResend>false</kcpFastResend>" | tee -a config.xml
+	@echo "        <kcpCongestionControl>true</kcpCongestionControl>" | tee -a config.xml
+	@echo "        <kcpSendWindowSize>128</kcpSendWindowSize>" | tee -a config.xml
+	@echo "        <kcpReceiveWindowSize>128</kcpReceiveWindowSize>" | tee -a config.xml
+	@echo "        <defaultFolderPath>~</defaultFolderPath>" | tee -a config.xml
+	@echo "        <minHomeDiskFreePct>0</minHomeDiskFreePct>" | tee -a config.xml
+	@echo "    </options>" | tee -a config.xml
 
 syncthing-emitconf:
-	@echo "<configuration version=\"23\">"
+	@echo "<configuration version=\"23\">" | tee config.xml
 	make syncthing-cacheconf
 	make syncthing-importconf
 	make syncthing-deviceconf
 	make syncthing-guiconf
 	make syncthing-optconf
-	@echo "</configuration>"
+	@echo "</configuration>" | tee -a config.xml
 
 syncthing-device-id:
 	@echo $(syncthing-device-id)
