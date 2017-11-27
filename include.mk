@@ -5,7 +5,7 @@ export syncthing-apikey = $(shell grep apikey $(HOME)/.config/syncthing/config.x
 export docker-syncthing-device-id = $(shell docker exec hoardercache-syncthing syncthing -device-id)
 export docker-syncthing-apikey = $(shell docker exec hoardercache-syncthing grep apikey $(HOME)/.config/syncthing/config.xml | sed 's|apikey||g' | tr -d '</>' )
 
-export import_directory ?= "$(working_directory)/hoardercache-syncthing/import
+export import_directory ?= $(working_directory)/hoardercache-syncthing/import
 
 syncthing-api:
 	@echo "$(syncthing-apikey)"
