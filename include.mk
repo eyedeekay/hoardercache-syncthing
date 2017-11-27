@@ -65,9 +65,11 @@ addon-syncthing-run-daemon:
 		-p 43842:43842 \
 		--restart=always \
 		--volume "$(cache_directory)/_import":/home/st/import:rw \
-		--volume "$(cache_directory)/":/home/st/cache \
+		--volume "$(cache_directory)/":/home/st/cache:rw \
 		--name hoardercache-syncthing \
 		-t hoardercache-syncthing
+
+		#
 
 addon-syncthing-restart:
 	docker rm -f hoardercache-syncthing; \
