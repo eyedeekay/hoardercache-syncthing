@@ -87,7 +87,7 @@ syncthing-importconf:
 	@echo "$(ST_IMPORT_CONF)"
 
 syncthing-deviceconf:
-	@echo "    <device id=\"$(syncthing-device-id)\" name=\"apthoarder-syncthing\" compression=\"metadata\" introducer=\"false\" skipIntroductionRemovals=\"false\" introducedBy=\"\">
+	@echo "    <device id=\"$(syncthing-device-id)\" name=\"apthoarder-syncthing\" compression=\"metadata\" introducer=\"false\" skipIntroductionRemovals=\"false\" introducedBy=\"\">"
 	@echo "        <address>dynamic</address>"
 	@echo "        <paused>false</paused>"
 	@echo "    </device>"
