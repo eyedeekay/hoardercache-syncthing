@@ -26,7 +26,7 @@ define ST_CACHE_CONF
 \t\t<disableTempIndexes>false</disableTempIndexes>\n \
 \t\t<paused>false</paused>\n \
 \t\t<weakHashThresholdPct>25</weakHashThresholdPct>\n \
-\t\t<markerName>/home/st/.stfolder.cache</markerName>\n \
+\t\t<markerName>/home/st/cache/.stfolder</markerName>\n \
 \t</folder>'
 endef
 
@@ -50,7 +50,7 @@ define ST_IMPORT_CONF
 \t\t<disableTempIndexes>false</disableTempIndexes>\n \
 \t\t<paused>false</paused>\n \
 \t\t<weakHashThresholdPct>25</weakHashThresholdPct>\n \
-\t\t<markerName>/home/st/.stfolder.import</markerName>\n \
+\t\t<markerName>/home/st/import/.stfolder</markerName>\n \
 \t</folder>
 endef
 
