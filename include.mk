@@ -67,7 +67,7 @@ addon-syncthing-run-daemon:
 		-p 43842:43842 \
 		--restart=always \
 		--volume "$(import_directory)/":/home/st/import:rw \
-		--volume "$(cache_directory)/":/home/st/cache:rw \
+		--volume "$(cache_directory)/":/home/st/cache \
 		--name hoardercache-syncthing \
 		-t hoardercache-syncthing
 
