@@ -64,7 +64,7 @@ addon-syncthing-build:
 addon-syncthing-run-daemon:
 	docker run -d \
 		-h apthoarder-syncthing \
-		-p 43842:43842 \
+		-p 127.0.0.1:43842:43842 \
 		--restart=always \
 		--volume "$(import_directory)/":/home/st/import \
 		--volume "$(cache_directory)/":/home/st/cache \
