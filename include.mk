@@ -2,7 +2,7 @@
 addon-syncthing-build:
 	docker build --force-rm -t hoardercache-syncthing .
 
-run-daemon:
+addon-syncthing-run-daemon:
 	docker run -d --rm \
 		-h apthoarder-syncthing \
 		-p 43842:8384
