@@ -5,6 +5,8 @@ export syncthing-apikey = $(shell grep apikey $(HOME)/.config/syncthing/config.x
 export docker-syncthing-device-id = $(shell docker exec hoardercache-syncthing syncthing -device-id)
 export docker-syncthing-apikey = $(shell docker exec hoardercache-syncthing grep apikey $(HOME)/.config/syncthing/config.xml | sed 's|apikey||g' | tr -d '</>' )
 
+export import_directory ?= "$(working_directory)/hoardercache-syncthing/import
+
 syncthing-api:
 	@echo "$(syncthing-apikey)"
 
@@ -64,7 +66,7 @@ addon-syncthing-run-daemon:
 		-h apthoarder-syncthing \
 		-p 43842:43842 \
 		--restart=always \
-		--volume "$(cache_directory)/_import":/home/st/import:rw \
+		--volume "$(import_directory)/":/home/st/import:rw \
 		--volume "$(cache_directory)/":/home/st/cache:rw \
 		--name hoardercache-syncthing \
 		-t hoardercache-syncthing
