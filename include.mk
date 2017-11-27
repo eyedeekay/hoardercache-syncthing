@@ -66,12 +66,10 @@ addon-syncthing-run-daemon:
 		-h apthoarder-syncthing \
 		-p 43842:43842 \
 		--restart=always \
-		--volume "$(import_directory)/":/home/st/import:rw \
+		--volume "$(import_directory)/":/home/st/import \
 		--volume "$(cache_directory)/":/home/st/cache \
 		--name hoardercache-syncthing \
 		-t hoardercache-syncthing
-
-		#
 
 addon-syncthing-restart:
 	docker rm -f hoardercache-syncthing; \
