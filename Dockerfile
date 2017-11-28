@@ -5,7 +5,8 @@ RUN adduser -h /home/st/ -S -D st st
 COPY . /home/st/
 WORKDIR /home/st/
 RUN mkdir -p /home/st/cache /home/st/import/.stfolder
-RUN chown -R st /home/st/cache /home/st/import
+RUN chown -R st /home/st/
+RUN chmod a+w /home/st/
 USER st
 RUN syncthing -generate /home/st/.config/syncthing
 RUN make syncthing-emitconf
