@@ -11,6 +11,6 @@ RUN mkdir -p /home/st/cache /home/st/import/.stfolder
 RUN chown -R st /home/st/
 RUN chmod a+w /home/st/
 USER st
-RUN syncthing -generate /home/st/.config/syncthing
-RUN make syncthing-emitconf
-CMD syncthing -gui-address=0.0.0.0:43842 -no-browser
+CMD syncthing -generate /home/st/.config/syncthing && \
+        make syncthing-emitconf && \
+        syncthing -gui-address=0.0.0.0:43842 -no-browser
