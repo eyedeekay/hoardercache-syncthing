@@ -11,7 +11,7 @@ syncthing-api:
 	@echo "$(syncthing-apikey)"
 
 define ST_CACHE_CONF
-'\t<folder id=\"hoarder-syncthing-cached\" label=\"Syncthing Cache Folder\" path=\"/home/st/cache/\" type=\"readonly\" rescanIntervalS=\"60\" fsWatcherEnabled=\"false\" fsWatcherDelayS=\"10\" ignorePerms=\"false\" autoNormalize=\"true\">\n \
+'\t<folder id=\"hoarder-syncthing-cached\" label=\"Syncthing_Cache_Folder\" path=\"/home/st/cache/\" type=\"readonly\" rescanIntervalS=\"60\" fsWatcherEnabled=\"false\" fsWatcherDelayS=\"10\" ignorePerms=\"false\" autoNormalize=\"true\">\n \
 \t<device id=\"$(syncthing-device-id)\"></device>\n \
 \t\t<filesystemType>basic</filesystemType>\n \
 \t\t<minDiskFree unit=\"%\">1</minDiskFree>\n \
@@ -35,7 +35,7 @@ endef
 export ST_CACHE_CONF
 
 define ST_IMPORT_CONF
-\t<folder id=\"hoarder-syncthing-import\" label=\"Syncthing import Folder\" path=\"/home/st/import/\" type=\"readwrite\" rescanIntervalS=\"1800\" fsWatcherEnabled=\"false\" fsWatcherDelayS=\"10\" ignorePerms=\"false\" autoNormalize=\"true\">\n \
+\t<folder id=\"hoarder-syncthing-import\" label=\"Syncthing_Import_Folder\" path=\"/home/st/import/\" type=\"readwrite\" rescanIntervalS=\"1800\" fsWatcherEnabled=\"false\" fsWatcherDelayS=\"10\" ignorePerms=\"false\" autoNormalize=\"true\">\n \
 \t\t<device id=\"$(syncthing-device-id)\"></device>\n \
 \t\t<filesystemType>basic</filesystemType>\n \
 \t\t<minDiskFree unit=\"%\">1</minDiskFree>\n \

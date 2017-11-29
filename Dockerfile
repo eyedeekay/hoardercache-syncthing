@@ -1,4 +1,7 @@
 FROM alpine:edge
+VOLUME ["/home/st/cache"]
+VOLUME ["/home/st/import"]
+VOLUME ["/home/st/.config/syncthing"]
 RUN apk update
 RUN apk add syncthing make ca-certificates
 RUN adduser -h /home/st/ -S -D st st
