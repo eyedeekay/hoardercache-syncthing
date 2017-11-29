@@ -13,4 +13,5 @@ RUN chmod a+w /home/st/
 USER st
 CMD syncthing -generate /home/st/.config/syncthing && \
         make syncthing-emitconf && \
+        ln -s /home/st/import-apt /home/st/import/remote-apt \
         syncthing -gui-address=0.0.0.0:43842 -no-browser
