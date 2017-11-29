@@ -1,6 +1,6 @@
 FROM alpine:edge
 RUN apk update
-RUN apk add syncthing make
+RUN apk add syncthing make ca-certificates
 RUN adduser -h /home/st/ -S -D st st
 COPY . /home/st/
 WORKDIR /home/st/
